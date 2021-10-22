@@ -2,20 +2,21 @@ package spring.com.springweb;
 
 public class InterfaceDemo implements TestInterface {
 
-    public static void main(String[] args) throws Exception {
+    public boolean isNull(String str) {
+        System.out.println("Impl Null Check");
 
-        // Call Interface method as Interface
-        // name is preceding with method
-
-        TestInterface obj = new InterfaceDemo();
-        TestInterface.hello();
-        // Call Class static method
-        hello();
+        return str == null ? true : false;
     }
 
-    // Class Static method is defined
-    static void hello()
-    {
-        System.out.println("Called from Class");
+    public static void main(String args[]){
+        InterfaceDemo obj = new InterfaceDemo();
+       // obj.print("");
+        obj.isNull("abc");
+        TestInterface t = new TestInterface() {
+            @Override
+            public void print(String str) {
+
+            }
+        };
     }
 }
