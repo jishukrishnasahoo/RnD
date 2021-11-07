@@ -13,11 +13,11 @@ public class SortEmployeeDemo
     public static void main (String [] ar)
     {
         List<Employee> employees = new ArrayList<Employee>();
-        employees.add(new Employee(1,100));
-        employees.add(new Employee(2,800));
-        employees.add(new Employee(3,300));
-        employees.add(new Employee(4,400));
-        employees.add(new Employee(5,900));
+        employees.add(new Employee(1,100,1));
+        employees.add(new Employee(2,800,2));
+        employees.add(new Employee(3,300,3));
+        employees.add(new Employee(4,400,4));
+        employees.add(new Employee(5,900,5));
 
         List<Employee> sorted = employees.stream().sorted((obj1, obj2) -> (int) (obj2.getId() - obj1.getId())).collect(Collectors.toList());
 
