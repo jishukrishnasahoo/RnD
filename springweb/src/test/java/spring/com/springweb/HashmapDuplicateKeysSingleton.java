@@ -12,7 +12,7 @@ public class HashmapDuplicateKeysSingleton {
         employeeHashMap.put(s1, "jishu");
         employeeHashMap.put(s2, "krishna");
 
-        String e = employeeHashMap.get(s1);
+        String e = employeeHashMap.get(s2);
 
         System.out.println("equality " + s1.equals(s2));
 

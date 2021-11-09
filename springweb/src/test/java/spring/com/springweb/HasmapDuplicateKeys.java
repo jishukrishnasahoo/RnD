@@ -17,9 +17,9 @@ public class HasmapDuplicateKeys
         employeeHashMap.put(employee2, "sahoo");
         employeeHashMap.put(employee, "krish");
 
-        String e = employeeHashMap.get(employee2);
+        String e = employeeHashMap.get(employee);
 
-        System.out.println("equality "+ employee.equals(employee1));
+        System.out.println("equality "+ employee.equals(employee));
 
         System.out.println("employeeHashMap "+ employeeHashMap.toString());
 
