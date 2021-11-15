@@ -56,7 +56,7 @@ public class Employee {
         final Employee other = (Employee) o;
         if (this.id == other.id)
         {
-            return false;
+            return true;
         }
         else return false;
     }
