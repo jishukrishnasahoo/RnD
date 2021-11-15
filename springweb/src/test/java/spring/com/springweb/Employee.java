@@ -1,6 +1,8 @@
 package spring.com.springweb;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable{
 
     public int getId() {
         return id;
