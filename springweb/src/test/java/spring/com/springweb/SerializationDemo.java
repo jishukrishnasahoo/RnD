@@ -8,7 +8,7 @@ public class SerializationDemo implements Serializable
 
     static final long serialVersionUID = 2L;
     static private String name;
-    static Integer id;
+    static int id;
     transient String department;
 
     private Employee employee;
@@ -38,10 +38,13 @@ public class SerializationDemo implements Serializable
 
             SerializationDemo serializationDemo1 = (SerializationDemo)objectInputStream.readObject();
 
+            SerializationDemo sd = new SerializationDemo("", 0, "", new Employee(0, 0, 0));
+
             System.out.println("employee Code: "+serializationDemo1.employee.getCode());
             System.out.println("name: "+serializationDemo1.name);
             System.out.println("id: "+serializationDemo1.id);
             System.out.println("department: "+serializationDemo1.department);
+            System.out.println("department sd: "+sd.id);
             objectInputStream.close();
 
         } catch (Exception e) {
