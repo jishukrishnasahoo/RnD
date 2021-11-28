@@ -1,16 +1,23 @@
 package spring.com.springweb;
 
-interface Messageable{
-    Message getMessage(String msg);
+class Messageable{
+    static Message getMessage(String msg)
+    {
+        return new Message("");
+    }
 }
 class Message{
     Message(String msg){
         System.out.print(msg);
     }
 }
-public class ConstructorReference {
+public class ConstructorReference extends Messageable{
+
+    public static Message getMessage(String msg)
+    {
+        return new Message("");
+    }
     public static void main(String[] args) {
-        Messageable hello = Message::new;
-        hello.getMessage("Hello");
+
     }
 }

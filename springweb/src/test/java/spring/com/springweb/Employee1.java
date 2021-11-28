@@ -1,6 +1,6 @@
 package spring.com.springweb;
 
-public final class Employee1
+public final class Employee1 extends Employee
 {
     final String pancardNumber;
     public Employee1(String pancardNumber)
@@ -10,4 +10,6 @@ public final class Employee1
     public String getPancardNumber(){
         return pancardNumber;
     }
+
+
 }

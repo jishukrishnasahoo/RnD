@@ -23,6 +23,17 @@ public class Employee implements Serializable{
     private int id;
     private long salary;
 
+    public static final int fetchSalary()
+    {
+        return 0;
+    }
+
+    public Employee()
+    {
+
+    }
+
+
     public int getCode() {
         return code;
     }

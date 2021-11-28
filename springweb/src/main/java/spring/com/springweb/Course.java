@@ -1,5 +1,7 @@
 package spring.com.springweb;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Course
 {
 
@@ -8,11 +10,17 @@ public class Course
     private String department;
 
 
-    public Course(Integer id, String name, String department) {
+    public Course(Integer id, String name, String department, CourseBook courseBook) {
         this.id = id;
         this.name = name;
         this.department = department;
     }
+    @Autowired
+    public String getAuthorName(CourseBook courseBook)
+    {
+        return courseBook.getAuthor();
+    }
+
 
     @Override
     public String toString() {
