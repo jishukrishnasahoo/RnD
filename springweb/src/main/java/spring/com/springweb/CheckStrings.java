@@ -6,7 +6,7 @@ public class CheckStrings {
     static String a = new String("Jishu Krishna Sahoo");
 
     public static void main (String [] arg) {
-        LinkedList<Character> nameList = new LinkedList<>();
+        /*LinkedList<Character> nameList = new LinkedList<>();
         int i = a.length();
         System.out.println("Output  "+i);
         for (int j=0; j < i; j++)
@@ -40,7 +40,26 @@ public class CheckStrings {
 
             System.out.println(nameList.toString());
             break;
-        }
+        }*/
+        //hashcode1597143450
+
+        String s1 = "jishu";
+        String s2 = "sahoo";
+        s1 = (s1+s2);
+        s2 = s1.substring(0,5);
+        s1= s1.substring(5);
+
+
+        String a = "12345 678 9";
+        //a= a.substring(2,5);
+
+
+        StringBuilder sbr = new StringBuilder(a);
+
+        //System.out.println(s1+s2);
+        //Initial a lovely day not
+
+        System.out.println("Initial " + a.replace('1', 'a'));
 
     }
 

@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "orderms")
 public interface OrdermsFeignClientConfig {
     @RequestMapping(method = RequestMethod.GET,
-    value = "/orders", consumes = "application/json")
-    public Object getAllOrders();
+    value = "/order/hello", consumes = "application/json")
+    public String getAllOrders();
 }

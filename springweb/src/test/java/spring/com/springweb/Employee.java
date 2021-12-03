@@ -12,16 +12,16 @@ public class Employee implements Serializable{
         this.id = id;
     }
 
-    public long getSalary() {
+    public Integer getSalary() {
         return salary;
     }
 
-    public void setSalary(long salary) {
+    public void setSalary(Integer salary) {
         this.salary = salary;
     }
 
     private int id;
-    private long salary;
+    private Integer salary;
 
     public static final int fetchSalary()
     {
@@ -42,7 +42,7 @@ public class Employee implements Serializable{
         this.code = code;
     }
 
-    public Employee(int code, int id, long salary) {
+    public Employee(int code, int id, Integer salary) {
         this.code = code;
         this.id = id;
         this.salary = salary;
