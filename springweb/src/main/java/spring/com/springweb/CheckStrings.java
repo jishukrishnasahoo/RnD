@@ -43,23 +43,35 @@ public class CheckStrings {
         }*/
         //hashcode1597143450
 
-        String s1 = "jishu";
-        String s2 = "sahoo";
+        String s1 = "c,jishu,krishna,sahoo";
+        /*String s2 = "sahoo";
         s1 = (s1+s2);
-        s2 = s1.substring(0,5);
-        s1= s1.substring(5);
+        s2 = s1.substring(0,5);*/
+       // s1= s1.trim();
 
-
-        String a = "12345 678 9";
+        String a = new Integer(297).toString();
+        String b = "297".intern();
+        String c = b.intern();
         //a= a.substring(2,5);
 
 
-        StringBuilder sbr = new StringBuilder(a);
+        StringBuilder sbr = new StringBuilder("jishu krishna sahoo");
 
         //System.out.println(s1+s2);
         //Initial a lovely day not
+       // System.out.println("replace " + a.replace('1', 'a'));
 
-        System.out.println("Initial " + a.replace('1', 'a'));
+        //System.out.println("replaceAll " + a.replaceAll("jishu", "girsh"));
+
+        //System.out.println("SBR " + sbr.replace(6, 13, "JK"));
+
+        //System.out.println("last inex"+s1.split("jishu"));
+        for (String s: s1.split(",", 2))
+        {
+            System.out.println(s);
+        }
+
+        System.out.println("heap" + a.hashCode() + "intern" + b.hashCode()+ "anothr"+ c.hashCode());
 
     }
 

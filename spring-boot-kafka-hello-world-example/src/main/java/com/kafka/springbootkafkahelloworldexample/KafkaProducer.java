@@ -20,7 +20,8 @@ public class KafkaProducer {
     public String sendMessage(@PathVariable String message) {
 
         try {
-            kafkaTemplate.send(ApplicationConstant.TOPIC_NAME, message);
+            kafkaTemplate.send(ApplicationConstant.TOPIC_NAME, 0, "main", message+ "  main");
+            kafkaTemplate.send(ApplicationConstant.TOPIC_NAME, 0, "web", message+"  web");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -31,5 +31,11 @@ public class SortEmployeeDemo
 
         System.out.println( numbers.stream().reduce(0, Integer::sum));
         //System.out.println("emplist " + greaterList);
+
+        try {
+            new Employee().notifyAll();
+        } catch (Exception e) {
+
+        }
     }
 }
