@@ -4,6 +4,7 @@ package spring.com.springweb;
 import org.assertj.core.data.MapEntry;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -49,8 +50,33 @@ public class StreamsDemo
         Map newStudentsMap2 = studentsMap.entrySet().stream().sorted(Map.Entry.<Integer, String>comparingByValue().reversed())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap:: new));
 
+        Map lst = studentsMap.entrySet().stream().sorted((Map.Entry.<Integer,String>comparingByKey().reversed())).collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue(), (e1,e2)->e2, LinkedHashMap :: new));
 
-                        System.out.println("Students" + l);
+        Map<Integer, String> map12 =
+                studentsMap.entrySet()
+                        .stream().sorted(Map.Entry.<Integer, String>comparingByKey())
+                        .collect(Collectors.toMap(x -> x.getKey(), x-> x.getValue(), (c,v) -> v, LinkedHashMap::new));
+
+        Integer sum = studentsMap.keySet().stream().reduce((i,j)-> i+j).get();
+
+        Integer sum1 = studentsMap.entrySet().stream().map((x) -> x.getKey()).reduce((i, j) -> i + j).get();
+
+        Integer nums = primes.stream().map((i)-> i*5).reduce((i1,i2)-> i1+i2).get().intValue();
+
+        List<Integer> nl = Arrays.asList(1,2,3,4,5,6);
+        Long nli = nl.stream().mapToInt(integer -> integer).summaryStatistics().getSum();
+
+
+
+        String name = "jishu krishna sahoo";
+        Character aa= name.chars().mapToObj(a -> Character.valueOf((char) a)).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())).entrySet()
+                .stream().filter(e1-> e1.getValue()==1L).map(j->j.getKey()).findFirst().get();
+
+        primes.stream().mapToInt(i->i).summaryStatistics();
+
+        List rev = primes.stream().distinct().sorted(Collections.reverseOrder()).collect(Collectors.toList());
+
+        System.out.println("Students" + rev);
     }
 
 }

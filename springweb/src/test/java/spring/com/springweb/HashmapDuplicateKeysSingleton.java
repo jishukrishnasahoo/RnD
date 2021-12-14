@@ -6,8 +6,8 @@ public class HashmapDuplicateKeysSingleton {
 
     public static void main(String args[]) {
         HashMap<SingletonClass, String> employeeHashMap = new HashMap<>();
-        SingletonClass s1 = SingletonClass.getSingletonClass();
-        SingletonClass s2 = SingletonClass.getSingletonClass();
+        SingletonClass s1 = SingletonClass.getInstance();
+        SingletonClass s2 = SingletonClass.getInstance();
 
         employeeHashMap.put(s1, "jishu");
         employeeHashMap.put(s2, "krishna");

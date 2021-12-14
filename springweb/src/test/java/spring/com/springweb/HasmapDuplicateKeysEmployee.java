@@ -2,7 +2,7 @@ package spring.com.springweb;
 
 import java.util.HashMap;
 
-public class HasmapDuplicateKeysEmployee
+public class HasmapDuplicateKeysEmployee extends Abs
 {
     public static void main (String args [])
     {
@@ -23,6 +23,11 @@ public class HasmapDuplicateKeysEmployee
         System.out.println("fetched employee "+ employee.hashCode());
         System.out.println("fetched employee "+ employee1.hashCode());
         System.out.println("fetched employee "+ e);
+        System.out.println("fetched employee "+ employeeHashMap.size());
+        System.out.println("fetched employee "+ employeeHashMap.get(employee));
+
+        Employee employee2 = new Employee(2,1,1000);
+        System.out.println("fetched employee "+ employeeHashMap.get(employee));
     }
 
 }

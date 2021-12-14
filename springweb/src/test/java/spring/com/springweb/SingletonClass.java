@@ -1,68 +1,38 @@
 package spring.com.springweb;
 
 
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 
-public class SingletonClass implements Cloneable{
+public class SingletonClass implements Cloneable, Serializable{
 
-    private static SingletonClass singletonClass = new SingletonClass(10, 10000);
+        private static volatile SingletonClass instance = null;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public long getSalary() {
-        return salary;
-    }
-
-    public void setSalary(long salary) {
-        this.salary = salary;
-    }
-
-    public int hashCode() {
-        return this.id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        final SingletonClass other = (SingletonClass) o;
-        if (this.id == other.id)
-        {
-            return false;
+        private SingletonClass() {
+            if (instance != null){
+                throw new RuntimeException();
+            }
         }
-        else return false;
-    }
-
-    @Override
-    public String toString() {
-        return "SingletonClass{" +
-                "id=" + id +
-                ", salary=" + salary +
-                '}';
-    }
-
-    private int id;
-    private long salary;
-
-
-    private SingletonClass(int id, long salary) {
-        this.id = id;
-        this.salary = salary;
-    }
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        System.out.println("Cloning");
         return super.clone();
     }
 
-    public static SingletonClass getSingletonClass()
+
+    protected Object readResolve1()
     {
-        return singletonClass;
+      return instance;
     }
 
-
-}
+    public static SingletonClass getInstance() {
+            if (instance == null) {
+                synchronized (SingletonClass.class) {
+                    if (instance == null) {
+                        instance = new SingletonClass();
+                    }
+                }
+            }
+            return instance;
+        }
+    }

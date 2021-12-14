@@ -15,8 +15,10 @@ public class HasmapMechanism {
         HashMap<Book, Object> a = new HashMap();
         a.put(b1, "jishu");
         a.put(b2, "krishna");
-        System.out.println(a.toString()+ "    "+ a.get(b1));
-        System.out.println(a.toString()+ "    "+ a.get(b2));
+        a.put(null, "sahoo");
+        a.put(null, null);
+        a.put(null, null);
+        System.out.println(a.toString() + "    "+ a.get(b1));
     }
 
 }

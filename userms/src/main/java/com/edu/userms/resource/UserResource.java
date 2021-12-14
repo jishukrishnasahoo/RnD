@@ -47,7 +47,8 @@ public class UserResource {
     }
 
     @GetMapping("/users-orders")
-    public String getAllOrders() {
+    @HystrixCommand(fallbackMethod = "getFromFallback")
+    public Object getAllOrders() {
         LOGGER.info("calling orderms");
         return feignClientConfig.getAllOrders();
     }

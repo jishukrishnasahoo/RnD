@@ -49,9 +49,9 @@ public class CheckStrings {
         s2 = s1.substring(0,5);*/
        // s1= s1.trim();
 
-        String a = new Integer(297).toString();
-        String b = "297".intern();
-        String c = b.intern();
+        String a = "new delhi".intern();
+        String b = new String("new delhi");
+        String c = new String("new delhi");
         //a= a.substring(2,5);
 
 
@@ -71,7 +71,11 @@ public class CheckStrings {
             System.out.println(s);
         }
 
-        System.out.println("heap" + a.hashCode() + "intern" + b.hashCode()+ "anothr"+ c.hashCode());
+        System.out.println("---a---" + a.hashCode() + "---b---" + b.hashCode()+ "---c---"+ c.hashCode());
+
+        System.out.println("===" + new Object().hashCode());
+
+
 
     }
 

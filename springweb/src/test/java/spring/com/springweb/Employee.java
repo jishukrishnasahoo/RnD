@@ -69,7 +69,7 @@ public class Employee implements Serializable{
         final Employee other = (Employee) o;
         if (this.id == other.id)
         {
-            return true;
+            return false;
         }
         else return false;
     }
