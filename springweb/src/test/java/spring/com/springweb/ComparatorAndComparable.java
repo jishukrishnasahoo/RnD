@@ -1,9 +1,9 @@
 package spring.com.springweb;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.*;
 
 public class ComparatorAndComparable
 {
@@ -26,6 +26,12 @@ public class ComparatorAndComparable
         Collections.sort(listOfBooks, byAuthor);
         System.out.println("list of books after sorting: " + listOfBooks);
         //Comparator<Book> byAuthor1 = Comparator.comparing(Book::getAuthor);
+
+        LocalDate.now(ZoneId.systemDefault());
+        Date d = new Date();
+
+        System.out.println(LocalDate.now(ZoneId.systemDefault()));
+        System.out.println(new Date());
 
     }
 

@@ -13,8 +13,8 @@ public class DequeDemo
         deque.addLast("i");
         deque.add("s");
         System.out.println(deque.poll());
+        System.out.println(deque.offerFirst("h"));
         System.out.println(deque);
-
     }
 
 }

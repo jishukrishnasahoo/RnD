@@ -10,17 +10,18 @@ public class SingletonClass implements Cloneable, Serializable{
 
         private SingletonClass() {
             if (instance != null){
+                System.out.println("try instanciating");
                 throw new RuntimeException();
             }
         }
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        return instance;
     }
 
 
-    protected Object readResolve1()
+    protected Object readResolve()
     {
       return instance;
     }

@@ -1,6 +1,8 @@
 package spring.com.springweb;
 
 import java.io.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 public class TestSingleton {
@@ -24,5 +26,20 @@ public class TestSingleton {
                 + si.hashCode());
         System.out.println("instance2 hashCode:- "
                 + instance2.hashCode());
+
+
+        Constructor[] constructors =
+                SingletonClass.class.getDeclaredConstructors();
+        Constructor c = constructors[0];
+        c.setAccessible(true);
+        try {
+            SingletonClass sc = (SingletonClass)c.newInstance();
+        } catch (InstantiationException e) {
+
+        } catch (IllegalAccessException e) {
+
+        } catch (InvocationTargetException e) {
+
+        }
     }
 }

@@ -23,6 +23,7 @@ public class HasmapDuplicateKeys
 
         System.out.println("employeeHashMap "+ employeeHashMap.toString());
 
+
         System.out.println("fetched employee "+ employee.hashCode());
         System.out.println("fetched employee "+ employee1.hashCode());
         System.out.println("employee2"+ e);
