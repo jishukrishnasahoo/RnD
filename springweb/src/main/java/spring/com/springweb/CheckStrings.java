@@ -6,7 +6,21 @@ public class CheckStrings {
     static String a = new String("Jishu Krishna Sahoo");
 
     public static void main (String [] arg) {
-        /*LinkedList<Character> nameList = new LinkedList<>();
+
+        String a = "abc";
+
+        String b = "";
+
+        for (int i=a.length()-1; i>=0; i--){
+            b += a.charAt(i);
+
+        }
+
+        System.out.println("jishu"+ b);
+
+
+
+        LinkedList<Character> nameList = new LinkedList<>();
         int i = a.length();
         System.out.println("Output  "+i);
         for (int j=0; j < i; j++)
@@ -19,11 +33,11 @@ public class CheckStrings {
         {
             resultList.add(iterator.next());
         }
-        System.out.println(nameList.toString());
-        System.out.println(resultList.toString());
+        System.out.println("name list"+nameList.toString());
+        System.out.println("reverse string"+resultList.toString());
 
         StringBuffer sb = new StringBuffer();
-        System.out.println(sb);
+        System.out.println("sb"+sb);
 
         for (Object obj : nameList)
         {
@@ -40,7 +54,7 @@ public class CheckStrings {
 
             System.out.println(nameList.toString());
             break;
-        }*/
+        }
         //hashcode1597143450
 
         String s1 = "c,jishu,krishna,sahoo";
@@ -49,7 +63,7 @@ public class CheckStrings {
         s2 = s1.substring(0,5);*/
        // s1= s1.trim();
 
-        String a = "new delhi".intern();
+      /*  String a = "newnew delhi new".intern();
         String b = new String("new delhi");
         String c = new String("new delhi");
         //a= a.substring(2,5);
@@ -61,7 +75,7 @@ public class CheckStrings {
         //Initial a lovely day not
        // System.out.println("replace " + a.replace('1', 'a'));
 
-        //System.out.println("replaceAll " + a.replaceAll("jishu", "girsh"));
+        System.out.println("replaceAll " + a.replaceAll("ew", "g"));
 
         //System.out.println("SBR " + sbr.replace(6, 13, "JK"));
 
@@ -73,7 +87,7 @@ public class CheckStrings {
 
         System.out.println("---a---" + a.hashCode() + "---b---" + b.hashCode()+ "---c---"+ c.hashCode());
 
-        System.out.println("===" + new Object().hashCode());
+        System.out.println("===" + new Object().hashCode());*/
 
 
 

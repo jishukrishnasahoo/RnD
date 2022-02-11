@@ -1,6 +1,9 @@
 package spring.com.springweb;
 
+import java.lang.ref.WeakReference;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
 class TestCollection{
      public static void main(String args[]){
 
@@ -18,8 +21,17 @@ class TestCollection{
 
          Optional<String> s = null;
 
-         System.out.println("simple of" +Optional.of(s));
+         //System.out.println("simple of" +Optional.of(s));
 
-         System.out.println("nullabe" +Optional.ofNullable(s));
+         System.out.println("nullabe" +al);
+
+         ConcurrentHashMap conmap = new ConcurrentHashMap();
+         Map<Integer, String> a = new HashMap<>();
+         a.put(1,"J");
+         a.put(null, null);
+
+         conmap.put(2, "i");
+         System.out.println(conmap);
+         WeakReference<StringBuilder> reference = new WeakReference<>(new StringBuilder());
     }
 }

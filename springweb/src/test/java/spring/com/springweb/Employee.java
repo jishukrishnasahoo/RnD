@@ -2,7 +2,7 @@ package spring.com.springweb;
 
 import java.io.Serializable;
 
-public class Employee{
+public class Employee implements Comparable{
 
     public int getId() {
         return id;
@@ -30,7 +30,7 @@ public class Employee{
 
     public Employee()
     {
-
+        System.out.println("Employee object created");
     }
 
 
@@ -61,7 +61,7 @@ public class Employee{
 
     @Override
     public int hashCode() {
-        return this.code;
+        return super.hashCode();
     }
 
     @Override
@@ -74,4 +74,8 @@ public class Employee{
         else return false;
     }
 
+    @Override
+    public int compareTo(Object o) {
+        return super.hashCode();
+    }
 }

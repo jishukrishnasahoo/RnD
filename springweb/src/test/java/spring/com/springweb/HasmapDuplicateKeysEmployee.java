@@ -1,6 +1,7 @@
 package spring.com.springweb;
 
-import java.util.HashMap;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class HasmapDuplicateKeysEmployee extends Abs
 {
@@ -9,6 +10,15 @@ public class HasmapDuplicateKeysEmployee extends Abs
         HashMap<Employee, String> employeeHashMap = new HashMap<>();
         Employee employee = new Employee(1,1,1000);
         Employee employee1 = new Employee(2,1,1000);
+
+        Map map = new ConcurrentHashMap<>();
+
+
+        List i = new ArrayList<>();
+        i.add(9);
+        i.add(1);
+        i.add(3);
+        i.add(2);
 
 
         employeeHashMap.put(employee, "jishu");
@@ -28,6 +38,7 @@ public class HasmapDuplicateKeysEmployee extends Abs
 
         Employee employee2 = new Employee(2,1,1000);
         System.out.println("fetched employee "+ employeeHashMap.get(employee));
+        System.out.println(i);
     }
 
 }

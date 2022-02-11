@@ -1,5 +1,6 @@
 package spring.com.springweb;
 
+import org.apache.kafka.common.protocol.types.Field;
 import org.assertj.core.util.Lists;
 
 import java.util.*;
@@ -25,6 +26,7 @@ public class CollectionsDemo
         //Collections.unmodifiableList(list);
 
         ArrayList<ArrayList<Integer>>  lists= new ArrayList<>();
+        List sync = mutabale.stream().sorted(Comparator.nullsFirst(String::compareTo)).collect(Collectors.toList());
 
         lists.add(new ArrayList());
         lists.get(0).add(0,0);
@@ -49,23 +51,43 @@ public class CollectionsDemo
         diff.removeAll(listTwo);
 
         HashSet ts = new HashSet();
+        List i = Collections.unmodifiableList(listOne);
+        //Collections.reverse(i);
 
         ts.add(null);
         ts.add(4);
         ts.add(2);
         ts.add(0);
         ts.add(2);
+        ts.add("jishu");
+        ts.add(2.3);
         ts.add(null);
+
+        System.out.println("hashset"+ts);
 
         Hashtable kv = new Hashtable();
 
         kv.put(1,"j");
-
+        String join = (String)listOne.stream().collect(Collectors.joining("|"));
 
         System.out.println(mutabale);
         System.out.println(listWithoutDuplicates);
 
-        System.out.println(ts);
+
+        System.out.println(sync);
+
+        int[] numbers = new int[] { -8, 7, 5, 9, 10, -2, 3 };
+
+        Arrays.sort(numbers);
+        String[] strings = new String[] { "learning", "java", "with", "baeldung" };
+
+        System.out.println("toString"+Arrays.toString(numbers));
+
+        for (int j = 0; j < numbers.length; j++) {
+            System.out.println(numbers[j]);
+        }
+
+        System.out.println("numbers"+numbers);
 
     }
 

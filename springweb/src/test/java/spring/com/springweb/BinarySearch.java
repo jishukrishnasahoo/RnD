@@ -32,7 +32,7 @@ public class BinarySearch
         return -1;
 
     }
-    public static void main(String ar [])
+    static public void main(String ar [])
     {
         ArrayList<Integer> arr = new ArrayList<Integer>();
 
@@ -41,7 +41,6 @@ public class BinarySearch
         arr.add(15);
         arr.add(20);
         arr.add(25);
-        arr.add(30);
         arr.add(35);
 
         int x = 25;

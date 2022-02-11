@@ -13,6 +13,7 @@ public class InterfaceDemo implements InterfaceB, InterfaceA {
 
     }
 
+
     public String fetchSomething()
     {
         InterfaceB.getSomething();
@@ -23,8 +24,7 @@ public class InterfaceDemo implements InterfaceB, InterfaceA {
         InterfaceDemo obj = new InterfaceDemo();
        // obj.print("");
         obj.isNull("abc");
-
-
+        System.out.println(obj.hashCode());
         System.out.println(obj.fetchSomething());
         TestInterface t = new TestInterface() {
             @Override

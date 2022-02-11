@@ -7,6 +7,7 @@ import java.util.List;
 class TestThread extends Thread{
     public void run(){
         getIndex();
+        print();
     }
 
     static List<Integer> indexes = Arrays.asList(1,2,3);
@@ -19,20 +20,23 @@ class TestThread extends Thread{
             try {
                 System.out.println(i);
                 System.out.println(Thread.currentThread().getName());
-                wait(10);
-                System.out.println("kkkkk");
-
-            } catch (InterruptedException e) {
+                sleep(10, 12);
+            } catch (Exception e) {
 
             }
         }
     }
 
+    public synchronized void print()
+    {
+        System.out.println("In Print"+Thread.currentThread().getName());
+    }
+
     public static void main(String args[]){
         TestThread a = new TestThread();
-        TestThread1 b = new TestThread1();
+        //TestThread b = new TestThread();
         Thread m1=new Thread(a);
-        Thread m2=new Thread(b);
+        Thread m2=new Thread(a);
         m1.setName("idReader");
         /*m1.setPriority(Thread.MIN_PRIORITY);
         m2.setPriority(Thread.MAX_PRIORITY);*/

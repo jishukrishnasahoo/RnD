@@ -10,4 +10,5 @@ interface InterfaceB {
         System.out.println("get something in Interface");
         return "";
     }
+    default void print(){}
 }
